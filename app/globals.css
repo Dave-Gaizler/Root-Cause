@@ -1,7 +1,9 @@
 @import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -25,17 +27,20 @@
     --ring: 239 84% 67%;
     --radius: 0.75rem;
   }
+
   * {
     border-color: hsl(var(--border));
   }
+
   body {
-    background-color: rgb(248 250 252); /* bg-slate-50 */
+    background-color: rgb(248 250 252);
     color: hsl(var(--foreground));
-    font-family: 'Satoshi', sans-serif;
+    font-family: 'Satoshi', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 }
+
 @layer utilities {
   .panel {
     @apply bg-white border border-slate-200/80 rounded-xl shadow-sm;
@@ -44,6 +49,7 @@
     @apply bg-slate-900 border border-slate-800 rounded-xl;
   }
 }
+
 /* Smooth scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
