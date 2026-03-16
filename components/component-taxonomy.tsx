@@ -37,7 +37,18 @@ export function ComponentTaxonomy() {
       <div className="grid grid-cols-3 gap-3">
         <StatCard value={totalComponents} label="Active components" color="text-emerald-600" />
         <StatCard value={componentGroups.length} label="Prefix groups" color="text-brand-600" />
-        <StatCard value={0} label="Root cause overlaps" color="text-slate-600" />
+        <div className="panel p-4 flex flex-col justify-center">
+          <a
+            href="https://jira.disney.com/secure/Dashboard.jspa?selectPageId=77372"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-semibold text-brand-600 hover:text-brand-700 hover:underline transition-colors flex items-center gap-1.5"
+          >
+            <span>📊</span>
+            <span>Root Cause Trends</span>
+          </a>
+          <p className="text-xs text-slate-400 mt-1">JIRA Dashboard</p>
+        </div>
       </div>
 
       {/* Guidance */}
@@ -45,6 +56,11 @@ export function ComponentTaxonomy() {
         Components are granular error identifiers that add specificity beyond Root Cause. Select the component(s) that describe the specific error(s) found. Try to limit to two per ticket. If no errors were found, leave the Component field empty.
         <br /><br />
         <strong>Investigation tickets</strong> use colon-prefix components (Targeting: Inventory). <strong>Campaign review tickets</strong> use dash-prefix components (ESPN - Targeting: Inventory). Only use &quot;:&quot; components for investigations.
+      </Callout>
+
+      {/* Rule of thumb */}
+      <Callout variant="success" title="The Rule of Thumb">
+        If a component just restates the root cause in different words, don&apos;t use it. If it tells you something <em>more specific</em> that would help build a targeted training, process fix, or tool improvement, it&apos;s the right component.
       </Callout>
 
       {/* Search */}
@@ -119,11 +135,6 @@ export function ComponentTaxonomy() {
           );
         })}
       </div>
-
-      {/* Rule of thumb */}
-      <Callout variant="success" title="The Rule of Thumb">
-        If a component just restates the root cause in different words, don&apos;t use it. If it tells you something <em>more specific</em> that would help build a targeted training, process fix, or tool improvement, it&apos;s the right component.
-      </Callout>
 
       <p className="text-xs text-slate-400 text-center pt-4">
         AOS Components Dictionary — Universal Investigation List — March 2026
