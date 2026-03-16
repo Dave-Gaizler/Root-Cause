@@ -1,9 +1,7 @@
 @import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -27,16 +25,13 @@
     --ring: 239 84% 67%;
     --radius: 0.75rem;
   }
-
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
-
   body {
     @apply bg-slate-50 text-foreground font-body antialiased;
   }
 }
-
 @layer utilities {
   .panel {
     @apply bg-white border border-slate-200/80 rounded-xl shadow-sm;
@@ -45,7 +40,6 @@
     @apply bg-slate-900 border border-slate-800 rounded-xl;
   }
 }
-
 /* Smooth scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
